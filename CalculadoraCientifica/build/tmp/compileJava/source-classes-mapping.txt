@@ -1,5 +1,3 @@
-CalculadoraCientifica/Main.java
- CalculadoraCientifica.Main
 CalculadoraCientifica/Tela.java
  CalculadoraCientifica.Tela
  CalculadoraCientifica.Tela$1
@@ -15,6 +13,11 @@ CalculadoraCientifica/Tela.java
  CalculadoraCientifica.Tela$19
  CalculadoraCientifica.Tela$2
  CalculadoraCientifica.Tela$20
+ CalculadoraCientifica.Tela$21
+ CalculadoraCientifica.Tela$22
+ CalculadoraCientifica.Tela$23
+ CalculadoraCientifica.Tela$24
+ CalculadoraCientifica.Tela$25
  CalculadoraCientifica.Tela$3
  CalculadoraCientifica.Tela$4
  CalculadoraCientifica.Tela$5
@@ -22,3 +25,5 @@ CalculadoraCientifica/Tela.java
  CalculadoraCientifica.Tela$7
  CalculadoraCientifica.Tela$8
  CalculadoraCientifica.Tela$9
+CalculadoraCientifica/Main.java
+ CalculadoraCientifica.Main
