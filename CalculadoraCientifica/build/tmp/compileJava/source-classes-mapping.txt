@@ -14,6 +14,7 @@ CalculadoraCientifica/Tela.java
  CalculadoraCientifica.Tela$18
  CalculadoraCientifica.Tela$19
  CalculadoraCientifica.Tela$2
+ CalculadoraCientifica.Tela$20
  CalculadoraCientifica.Tela$3
  CalculadoraCientifica.Tela$4
  CalculadoraCientifica.Tela$5
