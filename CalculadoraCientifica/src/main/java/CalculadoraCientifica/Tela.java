@@ -48,7 +48,7 @@ public class Tela extends javax.swing.JFrame {
         jToolBar2 = new javax.swing.JToolBar();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        porcentagem = new javax.swing.JButton();
         jToolBar3 = new javax.swing.JToolBar();
         apagarCompleto = new javax.swing.JButton();
         apagar = new javax.swing.JButton();
@@ -243,7 +243,7 @@ public class Tela extends javax.swing.JFrame {
                     .addComponent(igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(divisão, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ponto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jToolBar1.add(jPanel2);
@@ -252,10 +252,10 @@ public class Tela extends javax.swing.JFrame {
 
         jToolBar2.setRollover(true);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/porcentagem.png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        porcentagem.setText("%");
+        porcentagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                porcentagemActionPerformed(evt);
             }
         });
 
@@ -264,14 +264,15 @@ public class Tela extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 297, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(280, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 235, Short.MAX_VALUE))
+                .addComponent(porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 225, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -285,7 +286,7 @@ public class Tela extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(42, 42, 42)
                 .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -431,6 +432,10 @@ public class Tela extends javax.swing.JFrame {
             res = n1 / n2;
             tela.setText(Double.toString(res));
         }
+        if (op.equals("porcentagem")) {
+            res = (n1 / 100) * n2;
+            tela.setText(Double.toString(res));
+        }
     }//GEN-LAST:event_igualActionPerformed
 
     private void pontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pontoActionPerformed
@@ -444,9 +449,11 @@ public class Tela extends javax.swing.JFrame {
         tela.setText(str);
     }//GEN-LAST:event_apagarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void porcentagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porcentagemActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "porcentagem";
+        tela.setText("");
+    }//GEN-LAST:event_porcentagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -491,7 +498,6 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JButton divisão;
     private javax.swing.JButton dois;
     private javax.swing.JButton igual;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -504,6 +510,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JButton nove;
     private javax.swing.JButton oito;
     private javax.swing.JButton ponto;
+    private javax.swing.JButton porcentagem;
     private javax.swing.JButton quatro;
     private javax.swing.JButton seis;
     private javax.swing.JButton sete;
