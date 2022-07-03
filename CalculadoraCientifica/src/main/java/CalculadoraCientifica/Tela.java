@@ -53,12 +53,16 @@ public class Tela extends javax.swing.JFrame {
         nCubico = new javax.swing.JButton();
         log = new javax.swing.JButton();
         raizCubica = new javax.swing.JButton();
+        xElevadoy = new javax.swing.JButton();
+        mod = new javax.swing.JButton();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         apagarCompleto = new javax.swing.JButton();
         apagar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Calculadora Cientifica"));
@@ -305,6 +309,20 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        xElevadoy.setText("x^y");
+        xElevadoy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xElevadoyActionPerformed(evt);
+            }
+        });
+
+        mod.setText("mod");
+        mod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -315,16 +333,20 @@ public class Tela extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(log, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(log, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(xElevadoy, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(raizQuadrada, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(raizCubica, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(raizCubica, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(mod, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(nQuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(nCubico, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(244, Short.MAX_VALUE))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {nCubico, nQuadrado, raizQuadrada});
@@ -335,11 +357,13 @@ public class Tela extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(log, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(porcentagem, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(xElevadoy, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(raizQuadrada, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(raizCubica, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(raizCubica, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mod, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nQuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -352,6 +376,7 @@ public class Tela extends javax.swing.JFrame {
         jToolBar2.add(jPanel4);
 
         jTabbedPane1.addTab("Cientifica", jToolBar2);
+        jTabbedPane1.addTab("tab3", jTabbedPane2);
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -417,57 +442,63 @@ public class Tela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void quatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quatroActionPerformed
-        tela.setText(tela.getText() + "4");
-    }//GEN-LAST:event_quatroActionPerformed
+    private void apagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apagarActionPerformed
+        String str = tela.getText();
+        StringBuilder w = new StringBuilder(str);
+        str = String.valueOf(w.deleteCharAt(str.length() - 1));
+        tela.setText(str);
+    }//GEN-LAST:event_apagarActionPerformed
 
-    private void seisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seisActionPerformed
-        tela.setText(tela.getText() + "6");
-    }//GEN-LAST:event_seisActionPerformed
-
-    private void umActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_umActionPerformed
-        tela.setText(tela.getText() + "1");
-    }//GEN-LAST:event_umActionPerformed
-
-    private void noveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noveActionPerformed
-        tela.setText(tela.getText() + "9");
-    }//GEN-LAST:event_noveActionPerformed
-
-    private void doisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doisActionPerformed
-        tela.setText(tela.getText() + "2");
-    }//GEN-LAST:event_doisActionPerformed
-
-    private void trêsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trêsActionPerformed
-        tela.setText(tela.getText() + "3");
-    }//GEN-LAST:event_trêsActionPerformed
-
-    private void cincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cincoActionPerformed
-        tela.setText(tela.getText() + "5");
-    }//GEN-LAST:event_cincoActionPerformed
-
-    private void seteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seteActionPerformed
-        tela.setText(tela.getText() + "7");
-    }//GEN-LAST:event_seteActionPerformed
-
-    private void oitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oitoActionPerformed
-        tela.setText(tela.getText() + "8");
-    }//GEN-LAST:event_oitoActionPerformed
-
-    private void zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroActionPerformed
-        tela.setText(tela.getText() + "0");
-    }//GEN-LAST:event_zeroActionPerformed
-
-    private void somaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_somaActionPerformed
-        n1 = Double.parseDouble(tela.getText());
-        op = "soma";
+    private void apagarCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apagarCompletoActionPerformed
         tela.setText("");
-    }//GEN-LAST:event_somaActionPerformed
+    }//GEN-LAST:event_apagarCompletoActionPerformed
 
-    private void subtraçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtraçãoActionPerformed
+    private void xElevadoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xElevadoyActionPerformed
         n1 = Double.parseDouble(tela.getText());
-        op = "subtração";
+        op = "xElevadoy";
         tela.setText("");
-    }//GEN-LAST:event_subtraçãoActionPerformed
+    }//GEN-LAST:event_xElevadoyActionPerformed
+
+    private void raizCubicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_raizCubicaActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "raizCubica";
+    }//GEN-LAST:event_raizCubicaActionPerformed
+
+    private void logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "log";
+    }//GEN-LAST:event_logActionPerformed
+
+    private void nCubicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nCubicoActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "nCubico";
+    }//GEN-LAST:event_nCubicoActionPerformed
+
+    private void nQuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nQuadradoActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "nQuadrado";
+    }//GEN-LAST:event_nQuadradoActionPerformed
+
+    private void raizQuadradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_raizQuadradaActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "raizQuadrada";
+    }//GEN-LAST:event_raizQuadradaActionPerformed
+
+    private void porcentagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porcentagemActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "porcentagem";
+        tela.setText("");
+    }//GEN-LAST:event_porcentagemActionPerformed
+
+    private void pontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pontoActionPerformed
+        tela.setText(tela.getText() + ".");
+    }//GEN-LAST:event_pontoActionPerformed
+
+    private void divisãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisãoActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "divisão";
+        tela.setText("");
+    }//GEN-LAST:event_divisãoActionPerformed
 
     private void multiplicaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicaçãoActionPerformed
         n1 = Double.parseDouble(tela.getText());
@@ -475,11 +506,17 @@ public class Tela extends javax.swing.JFrame {
         tela.setText("");
     }//GEN-LAST:event_multiplicaçãoActionPerformed
 
-    private void divisãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisãoActionPerformed
+    private void subtraçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subtraçãoActionPerformed
         n1 = Double.parseDouble(tela.getText());
-        op = "divisão";
+        op = "subtração";
         tela.setText("");
-    }//GEN-LAST:event_divisãoActionPerformed
+    }//GEN-LAST:event_subtraçãoActionPerformed
+
+    private void somaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_somaActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "soma";
+        tela.setText("");
+    }//GEN-LAST:event_somaActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
         n2 = Double.parseDouble(tela.getText());
@@ -524,53 +561,61 @@ public class Tela extends javax.swing.JFrame {
             res = Math.cbrt(n1);
             tela.setText(Double.toString(res));
         }
+        if (op.equals("xElevadoy")) {
+            res = Math.pow(n1, n2);
+            tela.setText(Double.toString(res));
+        }
+        if(op.equals("mod")){
+            res = n1 % n2;
+            tela.setText(Double.toString(res));
+        }
     }//GEN-LAST:event_igualActionPerformed
 
-    private void pontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pontoActionPerformed
-        tela.setText(tela.getText() + ".");
-    }//GEN-LAST:event_pontoActionPerformed
+    private void zeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_zeroActionPerformed
+        tela.setText(tela.getText() + "0");
+    }//GEN-LAST:event_zeroActionPerformed
 
-    private void porcentagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_porcentagemActionPerformed
+    private void noveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_noveActionPerformed
+        tela.setText(tela.getText() + "9");
+    }//GEN-LAST:event_noveActionPerformed
+
+    private void oitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oitoActionPerformed
+        tela.setText(tela.getText() + "8");
+    }//GEN-LAST:event_oitoActionPerformed
+
+    private void seteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seteActionPerformed
+        tela.setText(tela.getText() + "7");
+    }//GEN-LAST:event_seteActionPerformed
+
+    private void cincoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cincoActionPerformed
+        tela.setText(tela.getText() + "5");
+    }//GEN-LAST:event_cincoActionPerformed
+
+    private void quatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quatroActionPerformed
+        tela.setText(tela.getText() + "4");
+    }//GEN-LAST:event_quatroActionPerformed
+
+    private void seisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seisActionPerformed
+        tela.setText(tela.getText() + "6");
+    }//GEN-LAST:event_seisActionPerformed
+
+    private void trêsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trêsActionPerformed
+        tela.setText(tela.getText() + "3");
+    }//GEN-LAST:event_trêsActionPerformed
+
+    private void doisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doisActionPerformed
+        tela.setText(tela.getText() + "2");
+    }//GEN-LAST:event_doisActionPerformed
+
+    private void umActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_umActionPerformed
+        tela.setText(tela.getText() + "1");
+    }//GEN-LAST:event_umActionPerformed
+
+    private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
         n1 = Double.parseDouble(tela.getText());
-        op = "porcentagem";
+        op = "mod";
         tela.setText("");
-    }//GEN-LAST:event_porcentagemActionPerformed
-
-    private void nQuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nQuadradoActionPerformed
-        n1 = Double.parseDouble(tela.getText());
-        op = "nQuadrado";
-    }//GEN-LAST:event_nQuadradoActionPerformed
-
-    private void nCubicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nCubicoActionPerformed
-        n1 = Double.parseDouble(tela.getText());
-        op = "nCubico";
-    }//GEN-LAST:event_nCubicoActionPerformed
-
-    private void logActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logActionPerformed
-        n1 = Double.parseDouble(tela.getText());
-        op = "log";
-    }//GEN-LAST:event_logActionPerformed
-
-    private void raizQuadradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_raizQuadradaActionPerformed
-        n1 = Double.parseDouble(tela.getText());
-        op = "raizQuadrada";
-    }//GEN-LAST:event_raizQuadradaActionPerformed
-
-    private void raizCubicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_raizCubicaActionPerformed
-        n1 = Double.parseDouble(tela.getText());
-        op = "raizCubica";
-    }//GEN-LAST:event_raizCubicaActionPerformed
-
-    private void apagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apagarActionPerformed
-        String str = tela.getText();
-        StringBuilder w = new StringBuilder(str);
-        str = String.valueOf(w.deleteCharAt(str.length() - 1));
-        tela.setText(str);
-    }//GEN-LAST:event_apagarActionPerformed
-
-    private void apagarCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apagarCompletoActionPerformed
-        tela.setText("");
-    }//GEN-LAST:event_apagarCompletoActionPerformed
+    }//GEN-LAST:event_modActionPerformed
 
     /**
      * @param args the command line arguments
@@ -620,9 +665,11 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
     private javax.swing.JButton log;
+    private javax.swing.JButton mod;
     private javax.swing.JButton multiplicação;
     private javax.swing.JButton nCubico;
     private javax.swing.JButton nQuadrado;
@@ -640,6 +687,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel tela;
     private javax.swing.JButton três;
     private javax.swing.JButton um;
+    private javax.swing.JButton xElevadoy;
     private javax.swing.JButton zero;
     // End of variables declaration//GEN-END:variables
 }
