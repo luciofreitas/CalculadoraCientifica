@@ -55,10 +55,15 @@ public class Tela extends javax.swing.JFrame {
         raizCubica = new javax.swing.JButton();
         xElevadoy = new javax.swing.JButton();
         mod = new javax.swing.JButton();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         apagarCompleto = new javax.swing.JButton();
         apagar = new javax.swing.JButton();
+        subtrairMemoria = new javax.swing.JButton();
+        addMemoria = new javax.swing.JButton();
+        rechamadaMemoria = new javax.swing.JButton();
+        limparMemoria1 = new javax.swing.JButton();
+        subtrairMemoria1 = new javax.swing.JButton();
+        subtrairMemoria2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -66,6 +71,7 @@ public class Tela extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Calculadora Cientifica"));
+        jPanel1.setName(""); // NOI18N
 
         tela.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 
@@ -219,7 +225,7 @@ public class Tela extends javax.swing.JFrame {
                     .addComponent(igual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(soma, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)
+                    .addComponent(soma, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
                     .addComponent(subtração, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(multiplicação, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(divisão, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -274,7 +280,7 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
-        raizQuadrada.setText("v²");
+        raizQuadrada.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lucio\\Documents\\MeusProjetosNoGithub\\CalculadoraCientifica\\CalculadoraCientifica\\src\\main\\java\\img\\simbolo-matematico-de-raiz-quadrada.png")); // NOI18N
         raizQuadrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 raizQuadradaActionPerformed(evt);
@@ -346,7 +352,7 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(nQuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(nCubico, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(177, Short.MAX_VALUE))
         );
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {nCubico, nQuadrado, raizQuadrada});
@@ -368,7 +374,7 @@ public class Tela extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nQuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nCubico, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {nCubico, nQuadrado, porcentagem, raizQuadrada});
@@ -376,7 +382,6 @@ public class Tela extends javax.swing.JFrame {
         jToolBar2.add(jPanel4);
 
         jTabbedPane1.addTab("Cientifica", jToolBar2);
-        jTabbedPane1.addTab("tab3", jTabbedPane2);
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -394,24 +399,58 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        subtrairMemoria.setText("M-");
+
+        addMemoria.setText("M+");
+
+        rechamadaMemoria.setText("MR");
+
+        limparMemoria1.setText("MC");
+
+        subtrairMemoria1.setText("MS");
+
+        subtrairMemoria2.setText("M");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(apagarCompleto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(apagar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(apagar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(apagarCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(limparMemoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rechamadaMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(addMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(subtrairMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(subtrairMemoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(subtrairMemoria2, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
-                .addComponent(apagarCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(apagarCompleto, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(apagar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(limparMemoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rechamadaMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subtrairMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subtrairMemoria1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(subtrairMemoria2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -422,7 +461,7 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -452,6 +491,12 @@ public class Tela extends javax.swing.JFrame {
     private void apagarCompletoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_apagarCompletoActionPerformed
         tela.setText("");
     }//GEN-LAST:event_apagarCompletoActionPerformed
+
+    private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
+        n1 = Double.parseDouble(tela.getText());
+        op = "mod";
+        tela.setText("");
+    }//GEN-LAST:event_modActionPerformed
 
     private void xElevadoyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xElevadoyActionPerformed
         n1 = Double.parseDouble(tela.getText());
@@ -611,12 +656,6 @@ public class Tela extends javax.swing.JFrame {
         tela.setText(tela.getText() + "1");
     }//GEN-LAST:event_umActionPerformed
 
-    private void modActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modActionPerformed
-        n1 = Double.parseDouble(tela.getText());
-        op = "mod";
-        tela.setText("");
-    }//GEN-LAST:event_modActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -654,6 +693,7 @@ public class Tela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addMemoria;
     private javax.swing.JButton apagar;
     private javax.swing.JButton apagarCompleto;
     private javax.swing.JButton cinco;
@@ -665,9 +705,9 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JToolBar jToolBar2;
+    private javax.swing.JButton limparMemoria1;
     private javax.swing.JButton log;
     private javax.swing.JButton mod;
     private javax.swing.JButton multiplicação;
@@ -680,9 +720,13 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JButton quatro;
     private javax.swing.JButton raizCubica;
     private javax.swing.JButton raizQuadrada;
+    private javax.swing.JButton rechamadaMemoria;
     private javax.swing.JButton seis;
     private javax.swing.JButton sete;
     private javax.swing.JButton soma;
+    private javax.swing.JButton subtrairMemoria;
+    private javax.swing.JButton subtrairMemoria1;
+    private javax.swing.JButton subtrairMemoria2;
     private javax.swing.JButton subtração;
     private javax.swing.JLabel tela;
     private javax.swing.JButton três;
