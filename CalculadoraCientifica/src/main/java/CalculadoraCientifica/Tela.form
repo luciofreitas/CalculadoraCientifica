@@ -380,7 +380,7 @@
                               <Component id="nQuadrado" linkSize="4" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                               <Component id="nCubico" linkSize="4" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="84" max="32767" attributes="0"/>
+                          <EmptySpace pref="79" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -475,9 +475,11 @@
                           <Component id="apagar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="apagarCompleto" min="-2" pref="83" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="telaM" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="limparMemoria1" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="limparMemoria" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="rechamadaMemoria" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -485,30 +487,34 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="subtrairMemoria" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="subtrairMemoria1" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="armazenarMemoria" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="subtrairMemoria2" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="memoria" min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="apagarCompleto" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="apagar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="apagarCompleto" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="apagar" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="telaM" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="limparMemoria1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="limparMemoria" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="rechamadaMemoria" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="subtrairMemoria" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="subtrairMemoria1" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="subtrairMemoria2" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="armazenarMemoria" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="memoria" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="addMemoria" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -548,20 +554,25 @@
             <Property name="text" type="java.lang.String" value="MR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="limparMemoria1">
+        <Component class="javax.swing.JButton" name="limparMemoria">
           <Properties>
             <Property name="text" type="java.lang.String" value="MC"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="subtrairMemoria1">
+        <Component class="javax.swing.JButton" name="armazenarMemoria">
           <Properties>
             <Property name="text" type="java.lang.String" value="MS"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="subtrairMemoria2">
+        <Component class="javax.swing.JButton" name="memoria">
           <Properties>
             <Property name="text" type="java.lang.String" value="M"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="memoriaActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="java.awt.List" name="telaM">
         </Component>
       </SubComponents>
     </Container>
